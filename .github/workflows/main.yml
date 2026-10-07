@@ -1,15 +1,24 @@
-name: my first pipeline
+name: new_pipeline
+
 on:
-  push: 
+ push:
    branches: [main]
-  pull_request:
-    branches: [main]
+ pull_request:
+   branches: [main]
 
 jobs:
   build:
-   runs-on: ubuntu-24.04
+   runs-on: windows-latest
    steps:
-     - uses: actions/checkout@v4
-     - name: myPipeLine
-       run: echo "hello world"
-  
+     - name: first
+       uses: actions/checkout@v4
+
+     - name: second
+       run: |
+        echo "installing dependenices"
+        npm i 
+
+     - name: third
+       run:  echo "working"
+     
+        
