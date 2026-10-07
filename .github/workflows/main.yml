@@ -1,0 +1,15 @@
+name: my first pipeline
+on:
+  push: 
+   branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  build:
+   runs-on: ubuntu-24.04
+   steps:
+     - uses: actions/checkout@v4
+     - name: myPipeLine
+       run: echo "hello world"
+  
