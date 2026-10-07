@@ -1,24 +1,21 @@
-name: new_pipeline
+name: cicd
 
 on:
  push:
-   branches: [main]
+   branches: [dev]
  pull_request:
-   branches: [main]
+   branches: [dev]
 
 jobs:
-  build:
-   runs-on: windows-latest
+  frontend:
+   runs-on: ubuntu-22.04
+
    steps:
      - name: first
-       uses: actions/checkout@v4
+       run: echo "hello world"
+  backend:
+    runs-on: windows-2022
 
-     - name: second
-       run: |
-        echo "installing dependenices"
-        npm i 
-
-     - name: third
-       run:  echo "working"
-     
-        
+    steps:
+      - name: second
+        run : echo "hello from second"
